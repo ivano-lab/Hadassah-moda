@@ -76,6 +76,10 @@ main {
   padding: 20px;
 }
 
+.featured-products h3 {
+  text-align: center;
+}
+
 .banner {
   position: relative;
 }
@@ -109,6 +113,69 @@ main {
 
 .banner-text .btn:hover {
   background-color: #0056b3;
+}
+
+/* Estilos para o banner rotativo */
+
+.banner-rotativo {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  animation: slideAnimation 10s infinite;
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.slide img {
+  width: 100%; /* Garante que a imagem ocupe toda a largura do slide */
+  max-height: 300px; /* Define a altura máxima desejada para as imagens */
+  object-fit: cover; /* Garante que a imagem cubra todo o espaço do contêiner */
+}
+
+.text {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+@keyframes slideAnimation {
+  0% {
+      transform: translateX(0%);
+  }
+  25% {
+      transform: translateX(0%);
+  }
+  30% {
+      transform: translateX(-100%);
+  }
+  55% {
+      transform: translateX(-100%);
+  }
+  60% {
+      transform: translateX(-200%);
+  }
+  85% {
+      transform: translateX(-200%);
+  }
+  100% {
+      transform: translateX(0%);
+  }
 }
 
 footer {
@@ -145,4 +212,49 @@ footer {
 
 .social-media a:hover {
   color: #007bff;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  header {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .search-bar {
+      margin: 10px 0;
+      width: 100%;
+  }
+
+  nav ul {
+      flex-direction: column;
+  }
+
+  nav ul li {
+      margin: 5px 0;
+  }
+
+  .banner-text {
+      top: 30%;
+  }
+
+  .footer-links ul {
+      text-align: center;
+  }
+
+  .footer-links ul li {
+      display: inline;
+      margin: 0 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-text h2 {
+      font-size: 1.2em;
+      margin-top: 180%;
+  }
+
+  .banner-text .btn {
+      padding: 5px 10px;
+  }
 }
